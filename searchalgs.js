@@ -41,3 +41,48 @@ class BinarySearchTree {
     }
   }
 }
+
+//recursive
+let BinaryInsert = function(root, val){
+  if (root >= val){
+    if (root.right){
+      BinaryInsert(root.right, val)
+    }else{
+      root.right = val
+    }
+  }else{
+    if (root.left){
+      BinaryInsert(root.left, val)
+    }else{
+      root.left = val
+    }
+  }
+  return root
+}
+
+//interative
+
+let BinaryInsert = function(root,val){
+  node = root 
+  while(1){
+    if(node >= val){
+      if(root.right){
+        node = root.right
+        continue;
+      }else{
+        root.right = val
+        break;
+      }
+    }else{
+      if(root.left){
+        node = root.left
+        continue;
+      }else{
+        root.left = val 
+        break;
+      }
+    }
+  }
+  return root
+}
+
